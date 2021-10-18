@@ -1,0 +1,38 @@
+/* @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap'); */
+
+body {
+  background: url('img/backgrounds/1540024.jpeg') center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+}
+
+h1 {
+  font-size: 150px;
+  color: antiquewhite;
+  opacity: .9;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7%;
+
+}
+
+form {
+  font-family: fantasy;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  width: 200px;
+  height: 25px;
+ }
+ #submit {
+   position: relative;
+   margin-left: 8px;
+ }
