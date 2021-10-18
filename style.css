@@ -22,17 +22,35 @@ h1 {
 }
 
 form {
-  font-family: fantasy;
+  font-family: sans-serif;
+  letter-spacing: .1em;
+  font-weight: 600;
+  color: antiquewhite;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 }
 input {
   width: 200px;
   height: 25px;
  }
+label {
+  display:block;
+  margin-bottom: 20px;
+  font-size: 130%;
+  opacity: .95;
+
+
+ }
  #submit {
    position: relative;
    margin-left: 8px;
+ }
+
+ #result {
+  letter-spacing: .1em;
+  color: rgba(163, 155, 144, 0.781);
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
+  background-color: rgb(250, 243, 233);
  }

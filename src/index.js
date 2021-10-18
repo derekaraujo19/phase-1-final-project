@@ -1,29 +1,28 @@
-// Grab the form
+// API INFO:
+
+const API_KEY = 'qczPsOADZkaEaGFJRLY2aCdmWlJnOCqn';
+// GEOCODE: http://www.mapquestapi.com/geocoding/v1/address?key=qczPsOADZkaEaGFJRLY2aCdmWlJnOCqn&location=Westhampton,NY
+// NWS: https://www.weather.gov/documentation/services-web-api#/ , https://weather-gov.github.io/api/gridpoints
+    // My example loc: Lat: 40.825980 Long: -72.643300
+    // Hourly forecast endpoint: https://api.weather.gov/gridpoints/OKX/78,47/forecast/hourly
+
+
+
+
+
+
+// Handle Form Submit:
 let locField = document.getElementById('send-location');
-// click event on submit that:
-  // makes fetch request to geocoding API to get coordinates
-  // response gets sent to another fetch to the Weather API
 locField.addEventListener('submit', (e) => {
   e.preventDefault();
   const locString = e.target.querySelector('#new-location').value;
   getLatLong(locString);
+  // locField.reset();
 })
 
 
 
-// NWS API:
-  // https://weather-gov.github.io/api/gridpoints
-
-  // GEOCODING API:
-    // https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html
-
-
-
-    // Lat: 40.825980 Long: -72.643300
-    // https://api.weather.gov/gridpoints/OKX/78,47/forecast/hourly
-
-
-
+// Weather Requests (first gets to loc, next gets current hour):
 const getTemp = (lat, long) => {
   fetch(`https://api.weather.gov/points/${lat},${long}`)
   .then(res => res.json())
@@ -37,15 +36,7 @@ const getTemp = (lat, long) => {
   })
 }
 
-
-const renderResult = (temperature) => {
-  document.querySelector('#result').innerText = temperature;
-}
-
-const API_KEY = 'qczPsOADZkaEaGFJRLY2aCdmWlJnOCqn';
-
-// http://www.mapquestapi.com/geocoding/v1/address?key=qczPsOADZkaEaGFJRLY2aCdmWlJnOCqn&location=Westhampton,NY
-
+// Geocode Request to translate city/state to lat/long:
 const getLatLong = (locString) => {
   fetch(`http://www.mapquestapi.com/geocoding/v1/address?key=${API_KEY}&location=${locString}`)
   .then(res => res.json())
@@ -54,4 +45,13 @@ const getLatLong = (locString) => {
     getTemp(latLong.lat, latLong.lng);
   })
 }
+
+// Append to DOM:
+const renderResult = (temperature) => {
+  document.querySelector('#result').innerText = "GRAB A LIGHT JACKET. IT'S GOING TO BE CHILLY.";
+  // this is where my conditional statements are going to go
+}
+
+
+
 
