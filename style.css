@@ -18,6 +18,7 @@ h1 {
   align-items: center;
   justify-content: center;
   margin-top: 7%;
+  margin-bottom: 10px;
 
 }
 
@@ -37,7 +38,7 @@ label {
   display:block;
   margin-bottom: 20px;
   font-size: 130%;
-  opacity: .95;
+  opacity: .9;
 
 
  }
@@ -48,9 +49,11 @@ label {
 
  #result {
   letter-spacing: .1em;
-  color: rgba(163, 155, 144, 0.781);
+  color: black;
   text-align: center;
   position: relative;
-  margin-top: 10px;
+  margin-top: 40px;
   background-color: rgb(250, 243, 233);
+  font-weight: 600;
+  opacity: .89;
  }
