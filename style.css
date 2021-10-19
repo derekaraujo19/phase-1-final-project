@@ -19,7 +19,6 @@ h1 {
   justify-content: center;
   margin-top: 7%;
   margin-bottom: 10px;
-
 }
 
 form {
@@ -28,20 +27,20 @@ form {
   font-weight: 600;
   color: antiquewhite;
   text-align: center;
-
 }
+
 input {
   width: 200px;
   height: 25px;
  }
+
 label {
   display:block;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 130%;
-  opacity: .9;
-
-
+  opacity: .95;
  }
+
  #submit {
    position: relative;
    margin-left: 8px;
@@ -52,8 +51,22 @@ label {
   color: black;
   text-align: center;
   position: relative;
-  margin-top: 40px;
   background-color: rgb(250, 243, 233);
   font-weight: 600;
   opacity: .89;
+  font-size: 125%;
+  width: 55%;
+  height: 60%;
+  margin: 50px auto;
+ }
+
+ .temp {
+  color:rgb(78, 78, 78);
+  font-size: 75%;
+  letter-spacing: .2em;
+ }
+
+ .refresh {
+   position:absolute;
+   bottom: -40px;
  }
