@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   // API INFO:
   const API_KEY = 'qczPsOADZkaEaGFJRLY2aCdmWlJnOCqn';
-  // GEOCODE: http://www.mapquestapi.com/geocoding/v1/address?key=qczPsOADZkaEaGFJRLY2aCdmWlJnOCqn&location=Westhampton,NY
+  // GEOCODE ENDPOINT: http://www.mapquestapi.com/geocoding/v1/address?key=qczPsOADZkaEaGFJRLY2aCdmWlJnOCqn&location=Westhampton,NY
+
   // NWS: https://www.weather.gov/documentation/services-web-api#/ , https://weather-gov.github.io/api/gridpoints
       // My example loc: Lat: 40.825980 Long: -72.643300
       // Hourly forecast endpoint: https://api.weather.gov/gridpoints/OKX/78,47/forecast/hourly
-
 
 
 
@@ -69,16 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     result.append(refreshBtn);
 
-
     // Append temperature at bottom of result
     let temp = document.createElement('div');
     temp.className = 'temp';
     temp.innerText = temperature + '°';
     result.appendChild(temp);
-
-    // append like click
-
-
   }
 
 })
