@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // API INFO:
-  const API_KEY = 'qczPsOADZkaEaGFJRLY2aCdmWlJnOCqn';
-  // GEOCODE ENDPOINT: http://www.mapquestapi.com/geocoding/v1/address?key=qczPsOADZkaEaGFJRLY2aCdmWlJnOCqn&location=Westhampton,NY
+  const API_KEY = '';
+  // GEOCODE ENDPOINT: http://www.mapquestapi.com/geocoding/v1/address?key= <api key > &location=Westhampton,NY
 
   // NWS: https://www.weather.gov/documentation/services-web-api#/ , https://weather-gov.github.io/api/gridpoints
       // My example loc: Lat: 40.825980 Long: -72.643300
@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle Form Submit:
   let locField = document.getElementById('send-location');
+  let location = '';
   locField.addEventListener('submit', (e) => {
     e.preventDefault();
     const locString = e.target.querySelector('#new-location').value;
+    location = locString;
     getLatLong(locString);
-    // locField.reset();
+    locField.reset();
   })
 
 
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Append to DOM:
   const renderResult = (temperature) => {
     const result = document.querySelector('#result');
+    // const suggestions = document.createElement("div");
     const t = temperature;
     if (t < 35) {
       result.innerText = "BREAK OUT YOUR PARKA AND HAND WARMERS. IT'S FREEZING.";
@@ -56,9 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
       result.innerText = "THROW A LIGHT JACKET IN YOUR BAG IN CASE YOU GET CHILLY."
     } else if (t >= 70 && t < 80) {
       result.innerText = "YOU'LL DO FINE IN A T-SHIRT AND JEANS.";
-    } else if (t >= 80) {
+    } else {
       result.innerText = "PACK A BATHING SUIT AND HEAD TO THE NEAREST POOL. IT'S A HOT ONE.";
     }
+    // result.append(suggestions);
 
     // Append refresh button to result
     const refreshBtn = document.createElement("button");
@@ -72,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Append temperature at bottom of result
     let temp = document.createElement('div');
     temp.className = 'temp';
-    temp.innerText = temperature + '°';
+    temp.innerText = temperature + '° ' + location;
     result.appendChild(temp);
   }
 
